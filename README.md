@@ -8,9 +8,9 @@ Edit text and paper metadata in `build.py`; edit the shared layout styles in `do
 
 ## GitHub Pages
 
-Repository: https://github.com/Angelaaa218/angelaaa218.github.io
+Planned repository: https://github.com/Angelaaa218/angelaaa218.github.io
 
-Publishing source: **main** branch, **/docs** folder. GitHub Pages publishes updates after changes are pushed to this branch. The public URL is https://angelaaa218.github.io/.
+Planned publishing source: **main** branch, **/docs** folder. Once enabled, GitHub Pages will publish updates after changes are pushed to this branch. The intended public URL is https://angelaaa218.github.io/. Publication is awaiting approval; no repository has been created or website files uploaded yet.
 
 To update the site, edit `build.py` or the assets, run `python3 build.py`, and commit and push both the source and generated `docs` files. No additional build service or dependencies are required. All site navigation and assets use relative paths so previews also work under a project subpath. Canonical URLs target the personal homepage.
 
@@ -26,10 +26,12 @@ To update the site, edit `build.py` or the assets, run `python3 build.py`, and c
 - The sidebar uses the user-supplied portrait in its original rectangular proportions. Linwei Xin is identified as the advisor, as confirmed by the user.
 - The CV's personal phone and street address are not included. The academic email is included. The CV source is not bundled in the public site.
 
-## Public visitor statistics
+## Private visitor analytics — not yet connected
 
-The footer shares one total page-view badge across Homepage, Research, and Teaching using https://hits.sh/angelaaa218.github.io/. It counts badge requests, not unique people: caching, bots, blockers, and service availability may affect totals. The production badge only loads on angelaaa218.github.io so local reviews do not inflate it. No API key or account is required. A `?visitor-preview=1` URL enables a separately labelled preview counter for testing.
+The website does not display visitor counts, IP addresses, or statistics links. The previous hits.sh counter and ipify IP lookup have been removed entirely. No visitor analytics service is currently connected, so the website code does not collect a private visitor history or make analytics requests.
 
-Each browser calls https://api64.ipify.org?format=json to display its own public IPv4/IPv6 address. The page does not save IPs, send them to the counter as data, or expose other visitors' addresses. Both providers receive ordinary network requests from visitors. With JavaScript disabled the IP label says “Requires JavaScript”; unavailable services show an explicit fallback.
+To enable private page-view reports by IP on GitHub Pages, use a separate authenticated analytics service. Statcounter is one option. The site owner must create a project for `https://angelaaa218.github.io/` and provide the website installation code. Keep the dashboard's public/guest access disabled, grant no other users access, and select an invisible counter. The invisible-counter option only controls the display; the account's access settings control who can read the reports. Verify that a signed-out visitor cannot open the reports before treating the setup as private. The provider processes the collected data; reports are private from website visitors.
 
-Provider documentation: https://github.com/silentsoft/hits and https://www.ipify.org/.
+Store no visitor logs, dashboard passwords, or analytics API credentials in this public website repository. A hidden page or a password checked in browser JavaScript would not protect analytics data on a static site. The provider's website installation identifiers are intended for embedding, and are different from account passwords or API credentials.
+
+Statcounter documents IP lookup, IP masking, invisible counters, and user/public access in its [user manual](https://secure.statcounter.com/support/manual/). IP addresses may be shared or change, so they do not reliably identify individual people. Private analytics remain optional for publishing the academic website.

@@ -17,4 +17,4 @@
 @media(max-width:850px){.portrait{width:140px}}
 @media(max-width:650px){.portrait{grid-row:1/3;width:82px;height:auto;margin:3px 0 0}}
 
-.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}.visitor-stats{display:flex;gap:20px;align-items:center;flex-wrap:wrap}.visitor-stats img{display:block;height:20px}.visitor-stats a{display:inline-block}.visitor-stats span{overflow-wrap:anywhere}
+.footer-inner{display:flex;align-items:center}
