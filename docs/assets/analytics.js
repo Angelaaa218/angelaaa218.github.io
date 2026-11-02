@@ -17,7 +17,7 @@
   window.sc_https = 1;
 
   const tracker = document.createElement('script');
-  tracker.src = 'https://secure.statcounter.com/counter/counter.js';
+  tracker.src = 'https://www.statcounter.com/counter/counter.js';
   tracker.async = true;
   document.head.appendChild(tracker);
 })();
