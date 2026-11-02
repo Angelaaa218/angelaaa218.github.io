@@ -8,28 +8,29 @@ Edit text and paper metadata in `build.py`; edit the shared layout styles in `do
 
 ## GitHub Pages
 
-Planned repository: https://github.com/Angelaaa218/angelaaa218.github.io
+Repository: https://github.com/Angelaaa218/angelaaa218.github.io
 
-Planned publishing source: **main** branch, **/docs** folder. Once enabled, GitHub Pages will publish updates after changes are pushed to this branch. The intended public URL is https://angelaaa218.github.io/. Publication is awaiting approval; no repository has been created or website files uploaded yet.
+Publishing source: **main** branch, **/docs** folder. GitHub Pages publishes updates after changes are pushed to this branch. Website: https://angelaaa218.github.io/. Publication was approved by the site owner on November 2, 2026.
 
 To update the site, edit `build.py` or the assets, run `python3 build.py`, and commit and push both the source and generated `docs` files. No additional build service or dependencies are required. All site navigation and assets use relative paths so previews also work under a project subpath. Canonical URLs target the personal homepage.
 
 ## Content and verification notes
 
-- The research statement was supplied directly by Jingyuan Yang on November 1, 2026. It emphasizes AI for supply chains, foundation models for inventory decisions, classical inventory theory, and stochastic modeling, optimization, and deep learning.
+- The research statement was supplied directly by Jingyuan Yang and revised on November 2, 2026. It emphasizes AI for supply chains, foundation models for inventory decisions, classical inventory theory, and stochastic modeling, optimization, and deep learning.
 - Education, Booth teaching terms, and working-paper revision statuses come from the supplied `CV.tex`. The High-dimensional Data Analysis teaching assistant role at Shanghai University of Finance and Economics (September 2020–January 2021) was supplied directly by the site owner.
 - Author names/order for papers listed on Linwei Xin’s live research page were checked on October 31, 2026: https://xin.engineering.cornell.edu/research/. Search-engine caches were stale; the live page includes Jingyuan Yang as fourth author on “A Bitter Lesson.” Its author order is Yi Sui, Chenjie Xiao, Linwei Xin, Jingyuan Yang, Donghai Huang, Lei Cao.
 - The remanufacturing paper uses the CV’s updated title and the Cornell page’s Linwei Xin, Jingyuan Yang order; the link currently carries the earlier title, explicitly identified on the site.
 - The technical note is published in Operations Research 74(2), 722–729 (2026), per the live Cornell page, superseding “forthcoming” in the CV.
-- “Foundation Models for Newsvendor Decisions” is not listed on the Cornell research page. Its authors derive from the CV; Qichuan Yin is the formal name of Ethan Yin, verified at https://ethanqyin.github.io/. Its author order is provisional because the CV only lists coauthors. No public manuscript URL was supplied or verified, so the title has no invented link.
+- “Foundation Models for Newsvendor Decisions” is not listed on the Cornell research page. Its authors derive from the CV; Qichuan Yin is the formal name of Ethan Yin, verified at https://ethanqyin.github.io/. The site owner confirmed the author order Linwei Xin, Jingyuan Yang, Qichuan Yin on November 2, 2026. No public manuscript URL was supplied or verified, so the title has no invented link.
+- “A Foundation Mode for Inventory Management” was supplied by the site owner, with the confirmed author order Jingyuan Yang, Linwei Xin, Alibaba Group and the status Work in progress. It appears first, followed by the newsvendor project. Revision statuses omit round numbers as requested.
 - Research coauthors are shown as plain text, with Jingyuan Yang's name in bold. Paper title links are retained. The homepage introduction retains the advisor's personal link and uses the owner-specified Booth Ph.D. program link.
 - The sidebar uses the user-supplied portrait in its original rectangular proportions. Linwei Xin is identified as the advisor, as confirmed by the user.
 - The portrait is enlarged and centered within the desktop sidebar. The Chinese name uses installed 楷体 fonts where available, with a self-hosted three-character subset of [LXGW WenKai](https://github.com/lxgw/LxgwWenKai) as a fallback. The renamed web-font subset and its SIL Open Font License are in `docs/assets/fonts/`; no third-party font request is needed.
 - The CV's personal phone and street address are not included. The academic email is included. The CV source is not bundled in the public site.
 
-## Private visitor analytics — configured, awaiting publication
+## Private visitor analytics
 
-The website does not display visitor counts, IP addresses, or statistics links. The previous hits.sh counter and ipify IP lookup have been removed entirely. Statcounter project `13364396` is configured using the installation code provided by the site owner. The invisible tracker is included on all three pages and will begin recording eligible visits once the website is published.
+The website does not display visitor counts, IP addresses, or statistics links. The previous hits.sh counter and ipify IP lookup have been removed entirely. Statcounter project `13364396` is configured using the installation code provided by the site owner. The invisible tracker is included on all three pages and records eligible visits on the HTTPS production domain.
 
 To connect your account, copy `sc_project` and `sc_security` from the project's website installation code into `statcounter_project_id` and `statcounter_security_code` in `analytics.json`. These are public installation identifiers, not your account password or API key. Run `python3 build.py` to include the invisible tracker on all three pages. The tracker loads only on the HTTPS production domain, not localhost, file previews, or other domains. JavaScript-disabled visits and blocked tracking requests are not counted.
 
@@ -39,4 +40,4 @@ Signed-out checks on November 1, 2026 returned **Login Required** for the projec
 
 Store no visitor logs, dashboard passwords, or analytics API credentials in this public website repository. A hidden page or a password checked in browser JavaScript would not protect analytics data on a static site. The provider's website installation identifiers are intended for embedding, and are different from account passwords or API credentials.
 
-Statcounter documents IP lookup, IP masking, invisible counters, and user/public access in its [user manual](https://secure.statcounter.com/support/manual/). IP addresses may be shared or change, so they do not reliably identify individual people. Live collection begins after publication; it has not yet been verified with a real visit to the published website.
+Statcounter documents IP lookup, IP masking, invisible counters, and user/public access in its [user manual](https://secure.statcounter.com/support/manual/). IP addresses may be shared or change, so they do not reliably identify individual people. Collected visits can be reviewed in the owner’s Statcounter dashboard; collection may be prevented by tracking blockers or browser privacy settings.

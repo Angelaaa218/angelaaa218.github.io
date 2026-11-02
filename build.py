@@ -27,8 +27,8 @@ def paper(title, names, status, ssrn=None, extra=''):
     return f'<li class="paper"><h3>{heading}</h3><p class="authors">{", ".join(author(n) for n in names)}</p><p class="status">{status}</p>{extra}</li>'
 
 home = '''<h1>Welcome!</h1>
-<p>I’m Jingyuan Yang (<span class="chinese-name" lang="zh-Hans">杨静远</span>). I am a Ph.D. student in Management Science and Operations Management at the <a href="http://chicagobooth.edu/phd">University of Chicago Booth School of Business</a>. I am honored to be advised by <a href="https://xin.engineering.cornell.edu/">Prof. Linwei Xin</a>.</p>
-<p>My research focuses on <strong>AI for supply chains</strong>, especially <strong>inventory management</strong>. My recent work explores how foundation models can move from forecasting to decision-making. I am interested in combining them with the structural insight of classical inventory theory to make inventory decisions high-performing, scalable, and implementable in practice, while also providing managerial insights. Involved methodologies include stochastic modeling, optimization, and deep learning.</p>
+<p>I’m Jingyuan Yang (<span class="chinese-name" lang="zh-Hans">杨静远</span>). I am a fourth-year Ph.D. student in Management Science and Operations Management at the <a href="http://chicagobooth.edu/phd">University of Chicago Booth School of Business</a>. I am honored to be advised by <a href="https://xin.engineering.cornell.edu/">Prof. Linwei Xin</a>.</p>
+<p>My research focuses on <strong>AI for supply chains</strong>, with a particular focus on modern inventory management. My recent work explores <strong>how foundation models can move beyond forecasting toward decision-making</strong>. I am interested in combining the capabilities of foundation models with the structural insight of classical inventory theory to make inventory decisions high-performing, scalable, and implementable in practice, while also providing actionable managerial insights. My research integrates stochastic modeling, optimization, and deep learning.</p>
 <p>Before joining Chicago Booth, I earned master’s degrees from Tsinghua University and Columbia University, and a bachelor’s degree from Shanghai University of Finance and Economics.</p>
 <section aria-labelledby="education"><h2 id="education">Education</h2>
 <dl class="education">
@@ -37,14 +37,15 @@ home = '''<h1>Welcome!</h1>
 <div><dt>Columbia University</dt><dd><span class="degree">M.S. in Operations Research</span><span class="education-date">2022 – 2023</span></dd></div>
 <div><dt>Shanghai University of Finance and Economics</dt><dd><span class="degree">B.S. in Information Management and Systems</span><span class="education-date">2017 – 2021</span></dd></div>
 </dl></section>
-<section aria-labelledby="contact"><h2 id="contact">Contact</h2><p>For research discussions or collaborations, please email <a href="mailto:jyang21@chicagobooth.edu">jyang21@chicagobooth.edu</a>.</p></section>'''
+<section aria-labelledby="contact"><h2 id="contact">Contact</h2><p>I am always happy to talk about research or potential collaborations. Feel free to reach out at <a href="mailto:jyang21@chicagobooth.edu">jyang21@<wbr>chicagobooth.edu</a>.</p></section>'''
 
 research = '<h1>Working papers</h1><ol class="papers">'
-research += paper('Foundation Models for Newsvendor Decisions', ['Jingyuan Yang', 'Linwei Xin', 'Qichuan Yin'], 'Work in progress.')
+research += paper('A Foundation Mode for Inventory Management', ['Jingyuan Yang', 'Linwei Xin', 'Alibaba Group'], 'Work in progress.')
+research += paper('Foundation Models for Newsvendor Decisions', ['Linwei Xin', 'Jingyuan Yang', 'Qichuan Yin'], 'Work in progress.')
 research += paper('A Bitter Lesson for Retail Demand Forecasting: Evidence from Fine-Tuning Foundation Models', ['Yi Sui', 'Chenjie Xiao', 'Linwei Xin', 'Jingyuan Yang', 'Donghai Huang', 'Lei Cao'], 'Major revision at <em>Manufacturing &amp; Service Operations Management</em>.', '6788658')
 research += paper('Beyond Asymptotic Policies: A Deep Learning-Based HDPO Approach to Remanufacturing Systems', ['Linwei Xin', 'Jingyuan Yang'], 'Work in progress.', '3760906', '<p class="paper-note">Earlier version: <em>Asymptotic Analysis of a Remanufacturing System with Non-Identical Lead Times.</em></p>')
 research += paper('Losing Sales to Gain: Mitigating Demand Spillover in Inventory Networks', ['Jingyuan Yang', 'Linwei Xin', 'Yuan Zhong'], 'Major revision at <em>Management Science</em>.', '5291958')
-research += paper('Auto-Formulating Dynamic Programming Problems with Large Language Models', ['Chenyu Zhou', 'Jingyuan Yang', 'Linwei Xin', 'Yitian Chen', 'Ziyan He', 'Dongdong Ge'], 'Second-round major revision at <em>Manufacturing &amp; Service Operations Management</em>.', '5350161')
+research += paper('Auto-Formulating Dynamic Programming Problems with Large Language Models', ['Chenyu Zhou', 'Jingyuan Yang', 'Linwei Xin', 'Yitian Chen', 'Ziyan He', 'Dongdong Ge'], 'Major revision at <em>Manufacturing &amp; Service Operations Management</em>.', '5350161')
 research += '</ol><h2>Publications</h2><ol class="papers">'
 research += paper('Technical Note—Error Noted in “Robust Contract Designs: Linear Contracts and Moral Hazard” by Yu and Kong (2020)', ['Jingyuan Yang', 'Linwei Xin'], '<em>Operations Research</em>, 74(2), 722–729, 2026.', '3895883')
 research += '</ol>'
