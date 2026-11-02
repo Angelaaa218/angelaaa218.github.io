@@ -1,9 +1,21 @@
 """Generate a dependency-free GitHub Pages website. Run: python build.py."""
 from pathlib import Path
 from html import escape
+import json
+import re
 
 ROOT = Path(__file__).parent
 OUT = ROOT / 'docs'
+analytics = json.loads((ROOT / 'analytics.json').read_text(encoding='utf-8'))
+project_id = str(analytics.get('statcounter_project_id', '')).strip()
+security_code = str(analytics.get('statcounter_security_code', '')).strip()
+analytics_ready = bool(project_id or security_code)
+if analytics_ready and not (
+    re.fullmatch(r'[0-9]{1,15}', project_id)
+    and int(project_id) > 0
+    and re.fullmatch(r'[A-Za-z0-9]{8,64}', security_code)
+):
+    raise ValueError('Set both Statcounter installation identifiers in analytics.json, or leave both empty.')
 PEOPLE = {
     'Linwei Xin': 'https://xin.engineering.cornell.edu/',
     'Qichuan Yin': 'https://ethanqyin.github.io/',
@@ -56,6 +68,11 @@ teaching = '''<h1>Teaching</h1>
 
 for slug, label, content in [('', 'Homepage', home), ('research', 'Research', research), ('teaching', 'Teaching', teaching)]:
     base = '../' if slug else './'
+    tracking = (
+        f'<script src="{base}assets/analytics.js" data-project="{project_id}" '
+        f'data-security="{security_code}" defer></script>'
+        if analytics_ready else ''
+    )
     nav = ''.join(f'<a href="{base}{s + "/" if s else ""}"' + (' aria-current="page"' if s == slug else '') + f'>{l}</a>' for s,l in [('', 'Homepage'), ('research', 'Research'), ('teaching', 'Teaching')])
     html = f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
@@ -63,8 +80,9 @@ for slug, label, content in [('', 'Homepage', home), ('research', 'Research', re
 <link rel="canonical" href="https://angelaaa218.github.io/{slug + '/' if slug else ''}"><link rel="stylesheet" href="{base}assets/style.css"><link rel="icon" href="{base}assets/favicon.svg" type="image/svg+xml"></head>
 <body><a class="skip-link" href="#main">Skip to content</a><header class="masthead"><div class="masthead-inner"><a class="site-name" href="{base}">Jingyuan (Angela) Yang</a><nav aria-label="Main navigation">{nav}</nav></div></header>
 <div class="layout"><aside class="profile" aria-label="Profile"><img class="portrait" src="{base}assets/portrait.jpg" alt="Jingyuan (Angela) Yang" width="3971" height="5957"><h2>Jingyuan (Angela) Yang</h2><p class="role">Ph.D. student, Management Science and Operations Management, Chicago Booth</p><ul class="profile-links"><li><span aria-hidden="true">⌖</span> Chicago, Illinois</li><li><span aria-hidden="true">▥</span> <a href="https://www.chicagobooth.edu/">University of Chicago</a></li><li><span aria-hidden="true">✉</span> <a href="mailto:jyang21@chicagobooth.edu">jyang21@chicagobooth.edu</a></li></ul></aside>
-<main id="main">{content}</main></div><footer><div class="footer-inner"><span>© 2026 Jingyuan (Angela) Yang</span></div></footer></body></html>'''
+<main id="main">{content}</main></div><footer><div class="footer-inner"><span>© 2026 Jingyuan (Angela) Yang</span></div></footer>{tracking}</body></html>'''
     target = OUT / slug
     target.mkdir(parents=True, exist_ok=True)
     (target / 'index.html').write_text(html, encoding='utf-8')
 print('Built Homepage, Research, and Teaching in docs/')
+print('Analytics: configured; confirm private dashboard access in Statcounter.' if analytics_ready else 'Analytics: awaiting your Statcounter project installation identifiers.')

@@ -26,12 +26,14 @@ To update the site, edit `build.py` or the assets, run `python3 build.py`, and c
 - The sidebar uses the user-supplied portrait in its original rectangular proportions. Linwei Xin is identified as the advisor, as confirmed by the user.
 - The CV's personal phone and street address are not included. The academic email is included. The CV source is not bundled in the public site.
 
-## Private visitor analytics — not yet connected
+## Private visitor analytics — integration prepared, account required
 
-The website does not display visitor counts, IP addresses, or statistics links. The previous hits.sh counter and ipify IP lookup have been removed entirely. No visitor analytics service is currently connected, so the website code does not collect a private visitor history or make analytics requests.
+The website does not display visitor counts, IP addresses, or statistics links. The previous hits.sh counter and ipify IP lookup have been removed entirely. The Statcounter connection is prepared, but no visitor analytics account is currently connected. The installation fields in `analytics.json` are empty, so the generated website currently makes no analytics requests and collects no visitor history.
+
+To connect your account, copy `sc_project` and `sc_security` from the project's website installation code into `statcounter_project_id` and `statcounter_security_code` in `analytics.json`. These are public installation identifiers, not your account password or API key. Run `python3 build.py` to include the invisible tracker on all three pages. The tracker loads only on the HTTPS production domain, not localhost, file previews, or other domains. JavaScript-disabled visits and blocked tracking requests are not counted.
 
 To enable private page-view reports by IP on GitHub Pages, use a separate authenticated analytics service. Statcounter is one option. The site owner must create a project for `https://angelaaa218.github.io/` and provide the website installation code. Keep the dashboard's public/guest access disabled, grant no other users access, and select an invisible counter. The invisible-counter option only controls the display; the account's access settings control who can read the reports. Verify that a signed-out visitor cannot open the reports before treating the setup as private. The provider processes the collected data; reports are private from website visitors.
 
 Store no visitor logs, dashboard passwords, or analytics API credentials in this public website repository. A hidden page or a password checked in browser JavaScript would not protect analytics data on a static site. The provider's website installation identifiers are intended for embedding, and are different from account passwords or API credentials.
 
-Statcounter documents IP lookup, IP masking, invisible counters, and user/public access in its [user manual](https://secure.statcounter.com/support/manual/). IP addresses may be shared or change, so they do not reliably identify individual people. Private analytics remain optional for publishing the academic website.
+Statcounter documents IP lookup, IP masking, invisible counters, and user/public access in its [user manual](https://secure.statcounter.com/support/manual/). IP addresses may be shared or change, so they do not reliably identify individual people. Setup is not complete until the account is connected, its private report access is verified, and the website is published.
