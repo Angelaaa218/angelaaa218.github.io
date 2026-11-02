@@ -73,6 +73,7 @@ for slug, label, content in [('', 'Homepage', home), ('research', 'Research', re
     nav = ''.join(f'<a href="{base}{s + "/" if s else ""}"' + (' aria-current="page"' if s == slug else '') + f'>{l}</a>' for s,l in [('', 'Homepage'), ('research', 'Research'), ('teaching', 'Teaching')])
     html = f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="zZkEINzrYYxmoXLQg1P-2onjA52DxqIcVP84SFMLelA" />
 <title>{label} | Jingyuan (Angela) Yang</title><meta name="description" content="Jingyuan (Angela) Yang, Ph.D. student at Chicago Booth. Research on AI for supply chains, foundation models for inventory decisions, stochastic modeling, optimization, and deep learning.">
 <link rel="canonical" href="https://angelaaa218.github.io/{slug + '/' if slug else ''}"><link rel="stylesheet" href="{base}assets/style.css"><link rel="icon" href="{base}assets/favicon.svg" type="image/svg+xml"></head>
 <body><a class="skip-link" href="#main">Skip to content</a><header class="masthead"><div class="masthead-inner"><a class="site-name" href="{base}">Jingyuan (Angela) Yang</a><nav aria-label="Main navigation">{nav}</nav></div></header>
