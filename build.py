@@ -27,7 +27,7 @@ def paper(title, names, status, ssrn=None, extra=''):
     return f'<li class="paper"><h3>{heading}</h3><p class="authors">{", ".join(author(n) for n in names)}</p><p class="status">{status}</p>{extra}</li>'
 
 home = '''<h1>Welcome!</h1>
-<p>I’m Jingyuan Yang (杨静远). I am a Ph.D. student in Management Science and Operations Management at the <a href="http://chicagobooth.edu/phd">University of Chicago Booth School of Business</a>. I am honored to be advised by <a href="https://xin.engineering.cornell.edu/">Prof. Linwei Xin</a>.</p>
+<p>I’m Jingyuan Yang (<span class="chinese-name" lang="zh-Hans">杨静远</span>). I am a Ph.D. student in Management Science and Operations Management at the <a href="http://chicagobooth.edu/phd">University of Chicago Booth School of Business</a>. I am honored to be advised by <a href="https://xin.engineering.cornell.edu/">Prof. Linwei Xin</a>.</p>
 <p>My research focuses on <strong>AI for supply chains</strong>, especially <strong>inventory management</strong>. My recent work explores how foundation models can move from forecasting to decision-making. I am interested in combining them with the structural insight of classical inventory theory to make inventory decisions high-performing, scalable, and implementable in practice, while also providing managerial insights. Involved methodologies include stochastic modeling, optimization, and deep learning.</p>
 <p>Before joining Chicago Booth, I earned master’s degrees from Tsinghua University and Columbia University, and a bachelor’s degree from Shanghai University of Finance and Economics.</p>
 <section aria-labelledby="education"><h2 id="education">Education</h2>

@@ -13,8 +13,11 @@
 @media(max-width:1050px){.course-row{flex-wrap:wrap;gap:2px 20px}.course-date{margin-left:auto}}
 @media(max-width:650px){.education dd{flex-wrap:wrap;gap:2px 15px}.education-date{margin-left:auto}.course-date{white-space:normal;flex-shrink:1;max-width:100%}}
 
-.portrait{display:block;width:166px;height:auto;border:0;border-radius:0;outline:0;margin:0 0 23px;object-fit:contain}
-@media(max-width:850px){.portrait{width:140px}}
-@media(max-width:650px){.portrait{grid-row:1/3;width:82px;height:auto;margin:3px 0 0}}
+.portrait{display:block;width:100%;max-width:220px;height:auto;border:0;border-radius:0;outline:0;margin:0 auto 23px;object-fit:contain}
+@media(max-width:850px){.portrait{max-width:180px}}
+@media(max-width:650px){.portrait{grid-row:1/3;width:88px;max-width:100%;height:auto;margin:3px auto 0;justify-self:center}}
 
 .footer-inner{display:flex;align-items:center}
+
+@font-face{font-family:"Homepage Name Kai";src:local("Kaiti SC"),local("STKaiti"),local("KaiTi"),url("fonts/name-kai.woff") format("woff");font-style:normal;font-weight:400;font-display:swap;unicode-range:U+6768,U+9759,U+8FDC}
+.chinese-name{font-family:"Homepage Name Kai","Kaiti SC",STKaiti,KaiTi,serif;font-size:1.1em;font-weight:400}

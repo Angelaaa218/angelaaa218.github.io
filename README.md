@@ -24,6 +24,7 @@ To update the site, edit `build.py` or the assets, run `python3 build.py`, and c
 - “Foundation Models for Newsvendor Decisions” is not listed on the Cornell research page. Its authors derive from the CV; Qichuan Yin is the formal name of Ethan Yin, verified at https://ethanqyin.github.io/. Its author order is provisional because the CV only lists coauthors. No public manuscript URL was supplied or verified, so the title has no invented link.
 - Research coauthors are shown as plain text, with Jingyuan Yang's name in bold. Paper title links are retained. The homepage introduction retains the advisor's personal link and uses the owner-specified Booth Ph.D. program link.
 - The sidebar uses the user-supplied portrait in its original rectangular proportions. Linwei Xin is identified as the advisor, as confirmed by the user.
+- The portrait is enlarged and centered within the desktop sidebar. The Chinese name uses installed 楷体 fonts where available, with a self-hosted three-character subset of [LXGW WenKai](https://github.com/lxgw/LxgwWenKai) as a fallback. The renamed web-font subset and its SIL Open Font License are in `docs/assets/fonts/`; no third-party font request is needed.
 - The CV's personal phone and street address are not included. The academic email is included. The CV source is not bundled in the public site.
 
 ## Private visitor analytics — configured, awaiting publication
