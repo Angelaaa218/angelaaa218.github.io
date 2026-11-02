@@ -16,18 +16,10 @@ if analytics_ready and not (
     and re.fullmatch(r'[A-Za-z0-9]{8,64}', security_code)
 ):
     raise ValueError('Set both Statcounter installation identifiers in analytics.json, or leave both empty.')
-PEOPLE = {
-    'Linwei Xin': 'https://xin.engineering.cornell.edu/',
-    'Qichuan Yin': 'https://ethanqyin.github.io/',
-    'Yuan Zhong': 'https://faculty.chicagobooth.edu/Yuan-Zhong',
-    'Chenyu Zhou': 'https://0xzhouchenyu.github.io/',
-    'Dongdong Ge': 'https://www.acem.sjtu.edu.cn/en/faculty/gedongdong.html',
-}
-
 def author(name):
     if name == 'Jingyuan Yang':
         return '<strong>Jingyuan Yang</strong>'
-    return f'<a href="{PEOPLE[name]}">{name}</a>' if name in PEOPLE else escape(name)
+    return escape(name)
 
 def paper(title, names, status, ssrn=None, extra=''):
     url = f'https://papers.ssrn.com/sol3/papers.cfm?abstract_id={ssrn}' if ssrn else None
@@ -35,7 +27,7 @@ def paper(title, names, status, ssrn=None, extra=''):
     return f'<li class="paper"><h3>{heading}</h3><p class="authors">{", ".join(author(n) for n in names)}</p><p class="status">{status}</p>{extra}</li>'
 
 home = '''<h1>Welcome!</h1>
-<p>I’m Jingyuan Yang. I am a Ph.D. student in Management Science and Operations Management at the <a href="https://www.chicagobooth.edu/">University of Chicago Booth School of Business</a>. I am honored to be advised by <a href="https://xin.engineering.cornell.edu/">Prof. Linwei Xin</a>.</p>
+<p>I’m Jingyuan Yang (杨静远). I am a Ph.D. student in Management Science and Operations Management at the <a href="http://chicagobooth.edu/phd">University of Chicago Booth School of Business</a>. I am honored to be advised by <a href="https://xin.engineering.cornell.edu/">Prof. Linwei Xin</a>.</p>
 <p>My research focuses on <strong>AI for supply chains</strong>, especially <strong>inventory management</strong>. My recent work explores how foundation models can move from forecasting to decision-making. I am interested in combining them with the structural insight of classical inventory theory to make inventory decisions high-performing, scalable, and implementable in practice, while also providing managerial insights. Involved methodologies include stochastic modeling, optimization, and deep learning.</p>
 <p>Before joining Chicago Booth, I earned master’s degrees from Tsinghua University and Columbia University, and a bachelor’s degree from Shanghai University of Finance and Economics.</p>
 <section aria-labelledby="education"><h2 id="education">Education</h2>
@@ -45,7 +37,7 @@ home = '''<h1>Welcome!</h1>
 <div><dt>Columbia University</dt><dd><span class="degree">M.S. in Operations Research</span><span class="education-date">2022 – 2023</span></dd></div>
 <div><dt>Shanghai University of Finance and Economics</dt><dd><span class="degree">B.S. in Information Management and Systems</span><span class="education-date">2017 – 2021</span></dd></div>
 </dl></section>
-<section aria-labelledby="contact"><h2 id="contact">Contact</h2><p>I am always happy to talk about research or potential collaborations. Feel free to reach out at <a href="mailto:jyang21@chicagobooth.edu">jyang21@chicagobooth.edu</a>.</p></section>'''
+<section aria-labelledby="contact"><h2 id="contact">Contact</h2><p>For research discussions or collaborations, please email <a href="mailto:jyang21@chicagobooth.edu">jyang21@chicagobooth.edu</a>.</p></section>'''
 
 research = '<h1>Working papers</h1><ol class="papers">'
 research += paper('Foundation Models for Newsvendor Decisions', ['Jingyuan Yang', 'Linwei Xin', 'Qichuan Yin'], 'Work in progress.')
@@ -64,6 +56,10 @@ teaching = '''<h1>Teaching</h1>
 <li><div class="course-row"><span>BUSN 40101 Supply Chain Strategy and Practice (MBA)</span><span class="course-date">Winter 2026</span></div></li>
 <li><div class="course-row"><span>BUSN 36106 Managerial Decision Modeling (MIM)</span><span class="course-date">Autumn 2025; Autumn 2026</span></div></li>
 <li><div class="course-row"><span>BUSN 36106 Managerial Decision Modeling (MBA)</span><span class="course-date">Summer 2026</span></div></li>
+</ul></section>
+<section class="teaching-section" aria-labelledby="teaching-assistant-sufe"><h2 id="teaching-assistant-sufe">Teaching Assistant, Shanghai University of Finance and Economics</h2>
+<ul class="teaching-list">
+<li><div class="course-row"><span>High-dimensional Data Analysis</span><span class="course-date">Sep 2020 – Jan 2021</span></div></li>
 </ul></section>'''
 
 for slug, label, content in [('', 'Homepage', home), ('research', 'Research', research), ('teaching', 'Teaching', teaching)]:
@@ -79,7 +75,7 @@ for slug, label, content in [('', 'Homepage', home), ('research', 'Research', re
 <title>{label} | Jingyuan (Angela) Yang</title><meta name="description" content="Jingyuan (Angela) Yang, Ph.D. student at Chicago Booth. Research on AI for supply chains, foundation models for inventory decisions, stochastic modeling, optimization, and deep learning.">
 <link rel="canonical" href="https://angelaaa218.github.io/{slug + '/' if slug else ''}"><link rel="stylesheet" href="{base}assets/style.css"><link rel="icon" href="{base}assets/favicon.svg" type="image/svg+xml"></head>
 <body><a class="skip-link" href="#main">Skip to content</a><header class="masthead"><div class="masthead-inner"><a class="site-name" href="{base}">Jingyuan (Angela) Yang</a><nav aria-label="Main navigation">{nav}</nav></div></header>
-<div class="layout"><aside class="profile" aria-label="Profile"><img class="portrait" src="{base}assets/portrait.jpg" alt="Jingyuan (Angela) Yang" width="3971" height="5957"><h2>Jingyuan (Angela) Yang</h2><p class="role">Ph.D. student, Management Science and Operations Management, Chicago Booth</p><ul class="profile-links"><li><span aria-hidden="true">⌖</span> Chicago, Illinois</li><li><span aria-hidden="true">▥</span> <a href="https://www.chicagobooth.edu/">University of Chicago</a></li><li><span aria-hidden="true">✉</span> <a href="mailto:jyang21@chicagobooth.edu">jyang21@chicagobooth.edu</a></li></ul></aside>
+<div class="layout"><aside class="profile" aria-label="Profile"><img class="portrait" src="{base}assets/portrait.jpg" alt="Jingyuan (Angela) Yang" width="3971" height="5957"><h2>Jingyuan (Angela) Yang</h2><p class="role">Ph.D. student, Management Science and Operations Management, Chicago Booth</p><ul class="profile-links"><li><span aria-hidden="true">⌖</span> Chicago, Illinois</li><li><span aria-hidden="true">▥</span> <a href="http://chicagobooth.edu/phd">University of Chicago</a></li><li><span aria-hidden="true">✉</span> <a href="mailto:jyang21@chicagobooth.edu">jyang21@chicagobooth.edu</a></li></ul></aside>
 <main id="main">{content}</main></div><footer><div class="footer-inner"><span>© 2026 Jingyuan (Angela) Yang</span></div></footer>{tracking}</body></html>'''
     target = OUT / slug
     target.mkdir(parents=True, exist_ok=True)
