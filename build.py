@@ -40,7 +40,7 @@ home = '''<h1>Welcome!</h1>
 <section aria-labelledby="contact"><h2 id="contact">Contact</h2><p>I am always happy to talk about research or potential collaborations. Feel free to reach out at <a href="mailto:jyang21@chicagobooth.edu">jyang21@<wbr>chicagobooth.edu</a>.</p></section>'''
 
 research = '<h1>Working papers</h1><ol class="papers">'
-research += paper('A Foundation Mode for Inventory Management', ['Jingyuan Yang', 'Linwei Xin', 'Alibaba Group'], 'Work in progress.')
+research += paper('A Foundation Model for Inventory Management', ['Jingyuan Yang', 'Linwei Xin', 'Alibaba Group'], 'Work in progress.')
 research += paper('Foundation Models for Newsvendor Decisions', ['Linwei Xin', 'Jingyuan Yang', 'Qichuan Yin'], 'Work in progress.')
 research += paper('A Bitter Lesson for Retail Demand Forecasting: Evidence from Fine-Tuning Foundation Models', ['Yi Sui', 'Chenjie Xiao', 'Linwei Xin', 'Jingyuan Yang', 'Donghai Huang', 'Lei Cao'], 'Major revision at <em>Manufacturing &amp; Service Operations Management</em>.', '6788658')
 research += paper('Beyond Asymptotic Policies: A Deep Learning-Based HDPO Approach to Remanufacturing Systems', ['Linwei Xin', 'Jingyuan Yang'], 'Work in progress.', '3760906', '<p class="paper-note">Earlier version: <em>Asymptotic Analysis of a Remanufacturing System with Non-Identical Lead Times.</em></p>')
